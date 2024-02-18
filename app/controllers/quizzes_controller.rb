@@ -46,6 +46,7 @@ class QuizzesController < ApplicationController
         :answer_2,
         :answer_3,
         :answer_4,
+        :correct_answer,
         :image
       ]
     )
