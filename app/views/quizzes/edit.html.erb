@@ -3,8 +3,7 @@
 <%= render "form", quiz: @quiz %>
 
 <br>
-
-<div>
-  <%= link_to "Show this quiz", @quiz %> |
-  <%= link_to "Back to quizzes", quizzes_path %>
+<div class="btn-group my-5">
+  <%= link_to "Show this quiz", @quiz, class: "btn btn-sm btn-outline-dark" %>
+  <%= link_to "Back to quizzes", quizzes_path, class: "btn btn-sm btn-outline-dark" %>
 </div>

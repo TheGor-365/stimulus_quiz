@@ -3,8 +3,7 @@
 <%= render "form", question: @question %>
 
 <br>
-
-<div>
-  <%= link_to "Show this question", @question %> |
-  <%= link_to "Back to questions", questions_path %>
+<div class="btn-group my-5">
+  <%= link_to "Show this question", @question, class: "btn btn-sm btn-outline-dark" %>
+  <%= link_to "Back to questions", questions_path, class: "btn btn-sm btn-outline-dark" %>
 </div>

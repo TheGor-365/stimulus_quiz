@@ -6,6 +6,7 @@
   <div class="form-inputs">
     <%= f.association :quiz %>
     <%= f.input :content %>
+    <%= f.input :image, as: :file, input_html: {} %>
     <%= f.input :answer_1 %>
     <%= f.input :answer_2 %>
     <%= f.input :answer_3 %>

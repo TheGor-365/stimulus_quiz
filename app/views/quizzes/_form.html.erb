@@ -1,13 +1,21 @@
+<%= form_with(model: quiz, local: true, data: {
+  controller: "nested-form", nested_form_wrapper_selector_value: ".nested-form-wrapper"
+  }) do |form| %>
 
-<%= simple_form_for(@quiz) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <template data-nested-form-target="template">
+    <%= form.fields_for :questions, Question.new, child_index: "NEW_RECORD" do |question_fields| %>
+      <%= render "question_fields", f: question_fields %>
+    <% end %>
+  </template>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-  </div>
+  <%= form.fields_for :questions do |question_fields| %>
+    <%= render "question_fields", f: question_fields %>
+  <% end %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div data-nested-form-target="target"></div>
+  <button type="button" data-action="nested-form#add" class="btn btn-success mb-3">Add Question</button>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

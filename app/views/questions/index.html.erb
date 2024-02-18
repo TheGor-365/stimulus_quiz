@@ -1,14 +1,8 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Questions</h1>
 
-<div id="questions">
-  <% @questions.each do |question| %>
-    <%= render question %>
-    <p>
-      <%= link_to "Show this question", question %>
-    </p>
-  <% end %>
-</div>
+<% @questions.each do |question| %>
+  <%= render question %>
+  <p><%= link_to "Show this question", question, class: "btn btn-sm btn-outline-dark" %></p>
+<% end %>
 
-<%= link_to "New question", new_question_path %>
+<%= link_to "New question", new_question_path, class: "btn btn-sm btn-outline-dark" %>
